@@ -2,8 +2,6 @@ name: GitHub Profile Summary Cards
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -13,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Generate Cards
         uses: vn7n24fzkq/github-profile-summary-cards@main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: JubairAhammedJubu
           UTC_OFFSET: +06:00
