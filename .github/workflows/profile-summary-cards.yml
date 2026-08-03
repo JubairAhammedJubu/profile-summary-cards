@@ -1,0 +1,16 @@
+name: GitHub Profile Summary Cards
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: vn7n24fzkq/github-profile-summary-cards@main
+        with:
+          USERNAME: JubairAhammedJubu
+          UTC_OFFSET: +06:00
